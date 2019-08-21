@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home'
+import Filme from './pages/Filme'
 import Erro from './pages/Erro'
 
 import Header from './components/Header'
@@ -11,7 +12,9 @@ const Routes = () => {
             <Header />
             <Switch>
                 <Route exact path="/" component={ Home } />
-                <Route path="/" component={ Erro } />
+                <Route exact path="/filme/:id" component={ Filme } />
+
+                <Route path="*" component={ Erro } />
             </Switch>
         </BrowserRouter>
     );
